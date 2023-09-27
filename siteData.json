@@ -37,6 +37,11 @@
       "headingKeywords": {}
     },
     {
+      "src": "DeveloperGuide-RecipeBook.md",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
       "src": "DeveloperGuide.md",
       "title": "Developer Guide",
       "headings": {
@@ -101,6 +106,11 @@
         "running-tests": "Running tests",
         "types-of-tests": "Types of tests"
       },
+      "headingKeywords": {}
+    },
+    {
+      "src": "UserGuide-RecipeBook.md",
+      "headings": {},
       "headingKeywords": {}
     },
     {
