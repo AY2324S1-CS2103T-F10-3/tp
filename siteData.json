@@ -110,7 +110,26 @@
     },
     {
       "src": "UserGuide-RecipeBook.md",
-      "headings": {},
+      "title": "User Guide",
+      "headings": {
+        "recipebook-user-guide": "RecipeBook User Guide",
+        "quick-start": "Quick start",
+        "features": "Features",
+        "viewing-help-help": "Viewing help : help",
+        "adding-an-ingredient-add": "Adding an ingredient: add",
+        "using-up-ingredients-use": "Using up ingredients : use",
+        "finding-the-quantity-of-an-ingredient-by-name-stock": "Finding the quantity of an ingredient by name: stock",
+        "clearing-all-entries-clear": "Clearing all entries : clear",
+        "exiting-the-program-exit": "Exiting the program : exit",
+        "viewing-recipes-coming-in-v1-3": "Viewing Recipes [coming in v1.3]",
+        "adding-recipes-coming-in-v1-3": "Adding Recipes [coming in v1.3]",
+        "modifying-recipes-coming-in-v1-3": "Modifying Recipes [coming in v1.3]",
+        "saving-the-data": "Saving the data",
+        "editing-the-data-file": "Editing the data file",
+        "faq": "FAQ",
+        "known-issues": "Known issues",
+        "command-summary": "Command summary"
+      },
       "headingKeywords": {}
     },
     {
