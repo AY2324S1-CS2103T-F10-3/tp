@@ -8,7 +8,7 @@
         "about-us": "About Us",
         "project-team": "Project team",
         "john-doe": "John Doe",
-        "jane-doe": "Jane Doe",
+        "tan-tze-young": "Tan Tze Young",
         "johnny-doe": "Johnny Doe",
         "jean-doe": "Jean Doe",
         "seah-zi-xiang": "Seah Zi Xiang"
@@ -162,6 +162,11 @@
       "headings": {
         "addressbook-level-3": "AddressBook Level-3"
       },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/itstytan.md",
+      "headings": {},
       "headingKeywords": {}
     },
     {
