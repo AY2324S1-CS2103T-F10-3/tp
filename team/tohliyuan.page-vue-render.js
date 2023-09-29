@@ -5,7 +5,7 @@ with(this){return _c('div',{attrs:{"id":"app"}},[_c('header',{attrs:{"sticky":""
 };
     var pageVueStaticRenderFns = [function anonymous(
 ) {
-with(this){return _c('div',{attrs:{"id":"content-wrapper"}},[_c('h1',{attrs:{"id":"configuration-guide"}},[_v("Configuration guide"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#configuration-guide","onclick":"event.stopPropagation()"}})]),_v(" "),_c('p',[_v("Certain properties of the application can be controlled (e.g user preferences file location, logging level) through the configuration file (default: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("config.json")]),_v(").")])])}
+with(this){return _c('div',{attrs:{"id":"content-wrapper"}},[_c('p',[_v("Toh Li Yuan's Project Portfolio Page")]),_v(" "),_c('p',[_v("Project: [Ba]king [Br]ead")]),_v(" "),_c('p',[_v("[TO BE ADDED]")]),_v(" "),_c('p',[_v("Given below are my contributions to the project.")]),_v(" "),_c('ul',[_c('li',[_v("New Feature: [TO BE ADDED]")]),_v(" "),_c('li',[_v("Code Contribution: [TO BE ADDED]")]),_v(" "),_c('li',[_v("Enhancement Implemented: [TO BE ADDED]")]),_v(" "),_c('li',[_v("Contribution to UG: [TO BE ADDED]")]),_v(" "),_c('li',[_v("Contribution to DG: [TO BE ADDED]")])])])}
 },function anonymous(
 ) {
 with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Fri, 29 Sept 2023, 11:01:46 GMT+8]")])])])}
