@@ -37,18 +37,7 @@
       "headingKeywords": {}
     },
     {
-      "src": "DeveloperGuide-RecipeBook.md",
-      "headings": {
-        "appendix-requirements": "Appendix: Requirements",
-        "product-scope": "Product Scope",
-        "use-cases": "Use Cases",
-        "non-functional-requirements": "Non-Functional Requirements",
-        "glossary": "Glossary"
-      },
-      "headingKeywords": {}
-    },
-    {
-      "src": "DeveloperGuide.md",
+      "src": "DeveloperGuide (Pristine).md",
       "title": "Developer Guide",
       "headings": {
         "ab-3-developer-guide": "AB-3 Developer Guide",
@@ -75,6 +64,17 @@
         "launch-and-shutdown": "Launch and shutdown",
         "deleting-a-person": "Deleting a person",
         "saving-data": "Saving data"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "DeveloperGuide.md",
+      "headings": {
+        "appendix-requirements": "Appendix: Requirements",
+        "product-scope": "Product Scope",
+        "use-cases": "Use Cases",
+        "non-functional-requirements": "Non-Functional Requirements",
+        "glossary": "Glossary"
       },
       "headingKeywords": {}
     },
