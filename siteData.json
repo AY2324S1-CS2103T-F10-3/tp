@@ -11,6 +11,7 @@
         "tan-tze-young": "Tan Tze Young",
         "toh-li-yuan": "Toh Li Yuan",
         "jean-doe": "Jean Doe",
+        "thaddeus-ong": "Thaddeus Ong",
         "seah-zi-xiang": "Seah Zi Xiang",
         "dhruvi-ketan-rathod": "Dhruvi Ketan Rathod"
       },
@@ -192,6 +193,16 @@
     {
       "src": "team/prawnzyy.md",
       "headings": {},
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/thaddeusong.md",
+      "headings": {
+        "overview": "Overview",
+        "summary-of-contributions": "Summary of Contributions",
+        "contributions-to-developer-guide": "Contributions to Developer Guide",
+        "contributions-to-user-guide": "Contributions to User Guide"
+      },
       "headingKeywords": {}
     },
     {
