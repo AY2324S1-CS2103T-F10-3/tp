@@ -11,7 +11,8 @@
         "tan-tze-young": "Tan Tze Young",
         "toh-li-yuan": "Toh Li Yuan",
         "jean-doe": "Jean Doe",
-        "seah-zi-xiang": "Seah Zi Xiang"
+        "seah-zi-xiang": "Seah Zi Xiang",
+        "dhruvi-ketan-rathod": "Dhruvi Ketan Rathod"
       },
       "headingKeywords": {}
     },
@@ -168,6 +169,11 @@
       "headings": {
         "addressbook-level-3": "AddressBook Level-3"
       },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/dhruvir29.md",
+      "headings": {},
       "headingKeywords": {}
     },
     {
