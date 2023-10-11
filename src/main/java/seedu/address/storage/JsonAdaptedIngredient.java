@@ -27,7 +27,7 @@ class JsonAdaptedIngredient {
     private final String name;
 
     /**
-     * Constructs a {@code JsonAdaptedPerson} with the given person details.
+     * Constructs a {@code JsonAdaptedIngredient} with the given ingredient details.
      */
     @JsonCreator
     public JsonAdaptedIngredient(@JsonProperty("name") String name) {
@@ -35,16 +35,16 @@ class JsonAdaptedIngredient {
     }
 
     /**
-     * Converts a given {@code Person} into this class for Jackson use.
+     * Converts a given {@code Ingredient} into this class for Jackson use.
      */
     public JsonAdaptedIngredient(Ingredient source) {
         name = source.getName().fullName;
     }
 
     /**
-     * Converts this Jackson-friendly adapted person object into the model's {@code Person} object.
+     * Converts this Jackson-friendly adapted ingredient object into the model's {@code Ingredient} object.
      *
-     * @throws IllegalValueException if there were any data constraints violated in the adapted person.
+     * @throws IllegalValueException if there were any data constraints violated in the adapted ingredient.
      */
     public Ingredient toModelType() throws IllegalValueException {
         if (name == null) {

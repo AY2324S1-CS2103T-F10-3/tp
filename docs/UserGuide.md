@@ -17,7 +17,7 @@ RecipeBook is a **desktop app for managing recipes and ingredient inventory, opt
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-1. Download the latest `recipebook.jar` from [here](https://github.com/se-edu/addressbook-level3/releases).
+1. Download the latest `recipebook.jar` from [here](https://github.com/se-edu/inventory-level3/releases).
 
 1. Copy the file to the folder you want to use as the _home folder_ for your AddressBook.
 
@@ -136,7 +136,7 @@ AddressBook data are saved in the hard disk automatically after any command that
 
 ### Editing the data file
 
-AddressBook data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data file.
+AddressBook data are saved automatically as a JSON file `[JAR file location]/data/inventory.json`. Advanced users are welcome to update data directly by editing that data file.
 
 <box type="warning" seamless>
 

@@ -12,18 +12,18 @@ import seedu.address.model.Model;
 import seedu.address.model.ingredient.Ingredient;
 
 /**
- * Deletes a person identified using it's displayed index from the address book.
+ * Deletes a ingredient identified using it's displayed index from the address book.
  */
 public class DeleteCommand extends Command {
 
     public static final String COMMAND_WORD = "delete";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Deletes the person identified by the index number used in the displayed person list.\n"
+            + ": Deletes the ingredient identified by the index number used in the displayed ingredient list.\n"
             + "Parameters: INDEX (must be a positive integer)\n"
             + "Example: " + COMMAND_WORD + " 1";
 
-    public static final String MESSAGE_DELETE_PERSON_SUCCESS = "Deleted Person: %1$s";
+    public static final String MESSAGE_DELETE_PERSON_SUCCESS = "Deleted Ingredient: %1$s";
 
     private final Index targetIndex;
 
@@ -40,9 +40,9 @@ public class DeleteCommand extends Command {
             throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
         }
 
-        Ingredient personToDelete = lastShownList.get(targetIndex.getZeroBased());
-        model.deleteIngredient(personToDelete);
-        return new CommandResult(String.format(MESSAGE_DELETE_PERSON_SUCCESS, Messages.format(personToDelete)));
+        Ingredient ingredientToDelete = lastShownList.get(targetIndex.getZeroBased());
+        model.deleteIngredient(ingredientToDelete);
+        return new CommandResult(String.format(MESSAGE_DELETE_PERSON_SUCCESS, Messages.format(ingredientToDelete)));
     }
 
     @Override

@@ -95,7 +95,7 @@ public class ModelManager implements Model {
 
     @Override
     public void deleteIngredient(Ingredient target) {
-        inventory.removePerson(target);
+        inventory.removeIngredient(target);
     }
 
     @Override
@@ -111,10 +111,10 @@ public class ModelManager implements Model {
         inventory.setIngredient(target, editedIngredient);
     }
 
-    //=========== Filtered Person List Accessors =============================================================
+    //=========== Filtered Ingredient List Accessors =============================================================
 
     /**
-     * Returns an unmodifiable view of the list of {@code Person} backed by the internal list of
+     * Returns an unmodifiable view of the list of {@code Ingredient} backed by the internal list of
      * {@code versionedAddressBook}
      */
     @Override

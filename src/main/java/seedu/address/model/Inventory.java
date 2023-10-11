@@ -11,7 +11,7 @@ import seedu.address.model.ingredient.UniqueIngredientList;
 
 /**
  * Wraps all data at the address-book level
- * Duplicates are not allowed (by .isSamePerson comparison)
+ * Duplicates are not allowed (by .isSameIngredient comparison)
  */
 public class Inventory implements ReadOnlyInventory {
 
@@ -31,7 +31,7 @@ public class Inventory implements ReadOnlyInventory {
     public Inventory() {}
 
     /**
-     * Creates an Inventory using the Persons in the {@code toBeCopied}
+     * Creates an Inventory using the Ingredients in the {@code toBeCopied}
      */
     public Inventory(ReadOnlyInventory toBeCopied) {
         this();
@@ -41,8 +41,8 @@ public class Inventory implements ReadOnlyInventory {
     //// list overwrite operations
 
     /**
-     * Replaces the contents of the person list with {@code persons}.
-     * {@code persons} must not contain duplicate persons.
+     * Replaces the contents of the ingredient list with {@code ingredients}.
+     * {@code ingredients} must not contain duplicate ingredients.
      */
     public void setIngredients(List<Ingredient> ingredients) {
         this.ingredients.setIngredients(ingredients);
@@ -57,10 +57,10 @@ public class Inventory implements ReadOnlyInventory {
         setIngredients(newData.getIngredientList());
     }
 
-    //// person-level operations
+    //// ingredient-level operations
 
     /**
-     * Returns true if a person with the same identity as {@code person} exists in the address book.
+     * Returns true if a ingredient with the same identity as {@code ingredient} exists in the address book.
      */
     public boolean hasIngredient(Ingredient ingredient) {
         requireNonNull(ingredient);
@@ -68,17 +68,17 @@ public class Inventory implements ReadOnlyInventory {
     }
 
     /**
-     * Adds a person to the address book.
-     * The person must not already exist in the address book.
+     * Adds a ingredient to the address book.
+     * The ingredient must not already exist in the address book.
      */
     public void addIngredient(Ingredient p) {
         ingredients.add(p);
     }
 
     /**
-     * Replaces the given person {@code target} in the list with {@code editedPerson}.
+     * Replaces the given ingredient {@code target} in the list with {@code editedIngredient}.
      * {@code target} must exist in the address book.
-     * The person identity of {@code editedPerson} must not be the same as another existing person in the address book.
+     * The ingredient identity of {@code editedIngredient} must not be the same as another existing ingredient in the address book.
      */
     public void setIngredient(Ingredient target, Ingredient editedIngredient) {
         requireNonNull(editedIngredient);
@@ -90,7 +90,7 @@ public class Inventory implements ReadOnlyInventory {
      * Removes {@code key} from this {@code Inventory}.
      * {@code key} must exist in the address book.
      */
-    public void removePerson(Ingredient key) {
+    public void removeIngredient(Ingredient key) {
         ingredients.remove(key);
     }
 
@@ -99,7 +99,7 @@ public class Inventory implements ReadOnlyInventory {
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .add("persons", ingredients)
+                .add("ingredients", ingredients)
                 .toString();
     }
 
