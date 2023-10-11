@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.Inventory;
 import seedu.address.model.ReadOnlyInventory;
-import seedu.address.model.person.Person;
+import seedu.address.model.ingredient.Ingredient;
 
 /**
  * An Immutable Inventory that is serializable to JSON format.
@@ -52,9 +52,9 @@ class JsonSerializableInventory {
             if (inventory.hasIngredient(ingredient)) {
                 throw new IllegalValueException(MESSAGE_DUPLICATE_PERSON);
             }
-            Inventory.addIngredient(ingredient);
+            inventory.addIngredient(ingredient);
         }
-        return Inventory;
+        return inventory;
     }
 
 }

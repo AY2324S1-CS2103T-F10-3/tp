@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
 
 import seedu.address.testutil.PersonBuilder;
 
-public class PersonTest {
+public class IngredientTest {
 
     @Test
     public void asObservableList_modifyList_throwsUnsupportedOperationException() {

@@ -1,4 +1,4 @@
-package seedu.address.model.person;
+package seedu.address.model.ingredient;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
@@ -8,8 +8,8 @@ import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import seedu.address.model.person.exceptions.DuplicatePersonException;
-import seedu.address.model.person.exceptions.PersonNotFoundException;
+import seedu.address.model.ingredient.exceptions.DuplicateIngredientException;
+import seedu.address.model.ingredient.exceptions.IngredientNotFoundException;
 
 /**
  * A list of persons that enforces uniqueness between its elements and does not allow nulls.
@@ -20,18 +20,18 @@ import seedu.address.model.person.exceptions.PersonNotFoundException;
  *
  * Supports a minimal set of list operations.
  *
- * @see Person#isSamePerson(Person)
+ * @see Ingredient#isSamePerson(Ingredient)
  */
-public class UniquePersonList implements Iterable<Person> {
+public class UniqueIngredientList implements Iterable<Ingredient> {
 
-    private final ObservableList<Person> internalList = FXCollections.observableArrayList();
-    private final ObservableList<Person> internalUnmodifiableList =
+    private final ObservableList<Ingredient> internalList = FXCollections.observableArrayList();
+    private final ObservableList<Ingredient> internalUnmodifiableList =
             FXCollections.unmodifiableObservableList(internalList);
 
     /**
      * Returns true if the list contains an equivalent person as the given argument.
      */
-    public boolean contains(Person toCheck) {
+    public boolean contains(Ingredient toCheck) {
         requireNonNull(toCheck);
         return internalList.stream().anyMatch(toCheck::isSamePerson);
     }
@@ -40,10 +40,10 @@ public class UniquePersonList implements Iterable<Person> {
      * Adds a person to the list.
      * The person must not already exist in the list.
      */
-    public void add(Person toAdd) {
+    public void add(Ingredient toAdd) {
         requireNonNull(toAdd);
         if (contains(toAdd)) {
-            throw new DuplicatePersonException();
+            throw new DuplicateIngredientException();
         }
         internalList.add(toAdd);
     }
@@ -53,33 +53,33 @@ public class UniquePersonList implements Iterable<Person> {
      * {@code target} must exist in the list.
      * The person identity of {@code editedPerson} must not be the same as another existing person in the list.
      */
-    public void setPerson(Person target, Person editedPerson) {
-        requireAllNonNull(target, editedPerson);
+    public void setIngredient(Ingredient target, Ingredient editedIngredient) {
+        requireAllNonNull(target, editedIngredient);
 
         int index = internalList.indexOf(target);
         if (index == -1) {
-            throw new PersonNotFoundException();
+            throw new IngredientNotFoundException();
         }
 
-        if (!target.isSamePerson(editedPerson) && contains(editedPerson)) {
-            throw new DuplicatePersonException();
+        if (!target.isSamePerson(editedIngredient) && contains(editedIngredient)) {
+            throw new DuplicateIngredientException();
         }
 
-        internalList.set(index, editedPerson);
+        internalList.set(index, editedIngredient);
     }
 
     /**
      * Removes the equivalent person from the list.
      * The person must exist in the list.
      */
-    public void remove(Person toRemove) {
+    public void remove(Ingredient toRemove) {
         requireNonNull(toRemove);
         if (!internalList.remove(toRemove)) {
-            throw new PersonNotFoundException();
+            throw new IngredientNotFoundException();
         }
     }
 
-    public void setPersons(UniquePersonList replacement) {
+    public void setIngredients(UniqueIngredientList replacement) {
         requireNonNull(replacement);
         internalList.setAll(replacement.internalList);
     }
@@ -88,24 +88,24 @@ public class UniquePersonList implements Iterable<Person> {
      * Replaces the contents of this list with {@code persons}.
      * {@code persons} must not contain duplicate persons.
      */
-    public void setPersons(List<Person> persons) {
-        requireAllNonNull(persons);
-        if (!personsAreUnique(persons)) {
-            throw new DuplicatePersonException();
+    public void setIngredients(List<Ingredient> ingredients) {
+        requireAllNonNull(ingredients);
+        if (!ingredientsAreUnique(ingredients)) {
+            throw new DuplicateIngredientException();
         }
 
-        internalList.setAll(persons);
+        internalList.setAll(ingredients);
     }
 
     /**
      * Returns the backing list as an unmodifiable {@code ObservableList}.
      */
-    public ObservableList<Person> asUnmodifiableObservableList() {
+    public ObservableList<Ingredient> asUnmodifiableObservableList() {
         return internalUnmodifiableList;
     }
 
     @Override
-    public Iterator<Person> iterator() {
+    public Iterator<Ingredient> iterator() {
         return internalList.iterator();
     }
 
@@ -116,12 +116,12 @@ public class UniquePersonList implements Iterable<Person> {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof UniquePersonList)) {
+        if (!(other instanceof UniqueIngredientList)) {
             return false;
         }
 
-        UniquePersonList otherUniquePersonList = (UniquePersonList) other;
-        return internalList.equals(otherUniquePersonList.internalList);
+        UniqueIngredientList otherUniqueIngredientList = (UniqueIngredientList) other;
+        return internalList.equals(otherUniqueIngredientList.internalList);
     }
 
     @Override
@@ -137,10 +137,10 @@ public class UniquePersonList implements Iterable<Person> {
     /**
      * Returns true if {@code persons} contains only unique persons.
      */
-    private boolean personsAreUnique(List<Person> persons) {
-        for (int i = 0; i < persons.size() - 1; i++) {
-            for (int j = i + 1; j < persons.size(); j++) {
-                if (persons.get(i).isSamePerson(persons.get(j))) {
+    private boolean ingredientsAreUnique(List<Ingredient> ingredients) {
+        for (int i = 0; i < ingredients.size() - 1; i++) {
+            for (int j = i + 1; j < ingredients.size(); j++) {
+                if (ingredients.get(i).isSamePerson(ingredients.get(j))) {
                     return false;
                 }
             }

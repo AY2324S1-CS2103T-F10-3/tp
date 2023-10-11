@@ -70,7 +70,7 @@ public class JsonInventoryStorage implements InventoryStorage {
      * @param filePath location of the data. Cannot be null.
      */
     public void saveInventory(ReadOnlyInventory inventory, Path filePath) throws IOException {
-        requireNonNull(Inventory);
+        requireNonNull(inventory);
         requireNonNull(filePath);
 
         FileUtil.createIfMissing(filePath);
