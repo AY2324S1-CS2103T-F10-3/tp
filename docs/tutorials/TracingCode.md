@@ -177,7 +177,7 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
 
 1. Stepping through the method shows that it calls `ArgumentTokenizer#tokenize()` and `ParserUtil#parseIndex()` to obtain the arguments and index required.
 
-1. The rest of the method seems to exhaustively check for the existence of each possible parameter of the `edit` command and store any possible changes in an `EditPersonDescriptor`. Recall that we can verify the contents of `editPersonDesciptor` through the 'Variables' window.<br>
+1. The rest of the method seems to exhaustively check for the existence of each possible parameter of the `edit` command and store any possible changes in an `EditIngredientDescriptor`. Recall that we can verify the contents of `editIngredientDesciptor` through the 'Variables' window.<br>
    ![EditCommand](../images/tracing/EditCommand.png)
 
 1. As you just traced through some code involved in parsing a command, you can take a look at this class diagram to see where the various parsing-related classes you encountered fit into the design of the `Logic` component.
@@ -195,20 +195,20 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
    @Override
    public CommandResult execute(Model model) throws CommandException {
        ...
-       Person personToEdit = lastShownList.get(index.getZeroBased());
-       Person editedIngredient = createEditedPerson(personToEdit, editPersonDescriptor);
-       if (!personToEdit.isSamePerson(editedIngredient) && model.hasPerson(editedIngredient)) {
+       Ingredient ingredientToEdit = lastShownList.get(index.getZeroBased());
+       Ingredient editedIngredient = createEditedIngredient(ingredientToEdit, editIngredientDescriptor);
+       if (!ingredientToEdit.isSameIngredient(editedIngredient) && model.hasIngredient(editedIngredient)) {
            throw new CommandException(MESSAGE_DUPLICATE_PERSON);
        }
-       model.setPerson(personToEdit, editedIngredient);
-       model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+       model.setIngredient(ingredientToEdit, editedIngredient);
+       model.updateFilteredIngredientList(PREDICATE_SHOW_ALL_PERSONS);
        return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, editedIngredient));
    }
    ```
 
 1. As suspected, `command#execute()` does indeed make changes to the `model` object. Specifically,
-   * it uses the `setPerson()` method (defined in the interface `Model` and implemented in `ModelManager` as per the usual pattern) to update the ingredient data.
-   * it uses the `updateFilteredPersonList` method to ask the `Model` to populate the 'filtered list' with _all_ ingredients.<br>
+   * it uses the `setIngredient()` method (defined in the interface `Model` and implemented in `ModelManager` as per the usual pattern) to update the ingredient data.
+   * it uses the `updateFilteredIngredientList` method to ask the `Model` to populate the 'filtered list' with _all_ ingredients.<br>
      FYI, The 'filtered list' is the list of ingredients resulting from the most recent operation that will be shown to the user immediately after. For the `edit` command, we populate it with all the ingredients so that the user can see the edited ingredient along with all other ingredients. If this was a `find` command, we would be setting that list to contain the search results instead.<br>
      To provide some context, given below is the class diagram of the `Model` component. See if you can figure out where the 'filtered list' of ingredients is being tracked.
      <puml src="../diagrams/ModelClassDiagram.puml" width="450" /><br>
@@ -241,14 +241,14 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
      */
     public JsonSerializableAddressBook(ReadOnlyAddressBook source) {
         ingredients.addAll(
-            source.getPersonList()
+            source.getIngredientList()
                   .stream()
-                  .map(JsonAdaptedPerson::new)
+                  .map(JsonAdaptedIngredient::new)
                   .collect(Collectors.toList()));
     }
     ```
 
-1. It appears that a `JsonAdaptedPerson` is created for each `Person` and then added to the `JsonSerializableAddressBook`.
+1. It appears that a `JsonAdaptedIngredient` is created for each `Ingredient` and then added to the `JsonSerializableAddressBook`.
    This is because regular Java objects need to go through an _adaptation_ for them to be suitable to be saved in JSON format.
 
 1. While you are stepping through the classes in the `Storage` component, here is the component's class diagram to help you understand how those classes fit into the structure of the component.<br>
@@ -306,6 +306,6 @@ Here are some quick questions you can try to answer based on your execution path
 
     4.  Add a new command
 
-    5.  Add a new field to `Person`
+    5.  Add a new field to `Ingredient`
 
     6.  Add a new entity to the address book

@@ -48,7 +48,7 @@ public class RemarkCommand extends Command {
 
 Now that we have our `RemarkCommand` ready to be executed, we need to update `AddressBookParser#parseCommand()` to recognize the `remark` keyword. Add the new command to the `switch` block by creating a new `case` that returns a new instance of `RemarkCommand`.
 
-You can refer to the changes in this [diff](https://github.com/se-edu/addressbook-level3/commit/35eb7286f18a029d39cb7a29df8f172a001e4fd8#diff-399c284cb892c20b7c04a69116fcff6ccc0666c5230a1db8e4a9145def8fa4ee).
+You can refer to the changes in this [diff](https://github.com/se-edu/inventory-level3/commit/35eb7286f18a029d39cb7a29df8f172a001e4fd8#diff-399c284cb892c20b7c04a69116fcff6ccc0666c5230a1db8e4a9145def8fa4ee).
 
 ### Run the application
 
@@ -137,7 +137,7 @@ public class RemarkCommand extends Command {
 }
 ```
 
-Your code should look something like [this](https://github.com/se-edu/addressbook-level3/commit/dc6d5139d08f6403da0ec624ea32bd79a2ae0cbf#diff-a8e35af8f9c251525063fae36c9852922a7e7195763018eacec60f3a4d87c594) after you are done.
+Your code should look something like [this](https://github.com/se-edu/inventory-level3/commit/dc6d5139d08f6403da0ec624ea32bd79a2ae0cbf#diff-a8e35af8f9c251525063fae36c9852922a7e7195763018eacec60f3a4d87c594) after you are done.
 
 ### Parse user input
 
@@ -222,17 +222,17 @@ Don’t forget to update `AddressBookParser` to use our new `RemarkCommandParser
 </box>
 
 If you are stuck, check out the sample
-[here](https://github.com/se-edu/addressbook-level3/commit/dc6d5139d08f6403da0ec624ea32bd79a2ae0cbf#diff-8bf239e8e9529369b577701303ddd96af93178b4ed6735f91c2d8488b20c6b4a).
+[here](https://github.com/se-edu/inventory-level3/commit/dc6d5139d08f6403da0ec624ea32bd79a2ae0cbf#diff-8bf239e8e9529369b577701303ddd96af93178b4ed6735f91c2d8488b20c6b4a).
 
 ## Add `Remark` to the model
 
-Now that we have all the information that we need, let’s lay the groundwork for propagating the remarks added into the in-memory storage of ingredient data. We achieve that by working with the `Person` model. Each field in a Person is implemented as a separate class (e.g. a `Name` object represents the ingredient’s name). That means we should add a `Remark` class so that we can use a `Remark` object to represent a remark given to a ingredient.
+Now that we have all the information that we need, let’s lay the groundwork for propagating the remarks added into the in-memory storage of ingredient data. We achieve that by working with the `Ingredient` model. Each field in a Ingredient is implemented as a separate class (e.g. a `Name` object represents the ingredient’s name). That means we should add a `Remark` class so that we can use a `Remark` object to represent a remark given to a ingredient.
 
 ### Add a new `Remark` class
 
 Create a new `Remark` in `seedu.address.model.ingredient`. Since a `Remark` is a field that is similar to `Address`, we can reuse a significant bit of code.
 
-A copy-paste and search-replace later, you should have something like [this](https://github.com/se-edu/addressbook-level3/commit/4516e099699baa9e2d51801bd26f016d812dedcc#diff-41bb13c581e280c686198251ad6cc337cd5e27032772f06ed9bf7f1440995ece). Note how `Remark` has no constrains and thus does not require input
+A copy-paste and search-replace later, you should have something like [this](https://github.com/se-edu/inventory-level3/commit/4516e099699baa9e2d51801bd26f016d812dedcc#diff-41bb13c581e280c686198251ad6cc337cd5e27032772f06ed9bf7f1440995ece). Note how `Remark` has no constrains and thus does not require input
 validation.
 
 ### Make use of `Remark`
@@ -243,9 +243,9 @@ Let’s change `RemarkCommand` and `RemarkCommandParser` to use the new `Remark`
 
 Without getting too deep into `fxml`, let’s go on a 5 minute adventure to get some placeholder text to show up for each ingredient.
 
-Simply add the following to [`seedu.address.ui.PersonCard`](https://github.com/se-edu/addressbook-level3/commit/850b78879582f38accb05dd20c245963c65ea599#diff-639834f1e05afe2276a86372adf0fe5f69314642c2d93cfa543d614ce5a76688).
+Simply add the following to [`seedu.address.ui.IngredientCard`](https://github.com/se-edu/inventory-level3/commit/850b78879582f38accb05dd20c245963c65ea599#diff-639834f1e05afe2276a86372adf0fe5f69314642c2d93cfa543d614ce5a76688).
 
-**`PersonCard.java`:**
+**`IngredientCard.java`:**
 
 ```java
 @FXML
@@ -255,9 +255,9 @@ private Label remark;
 
 `@FXML` is an annotation that marks a private or protected field and makes it accessible to FXML. It might sound like Greek to you right now, don’t worry — we will get back to it later.
 
-Then insert the following into [`main/resources/view/PersonListCard.fxml`](https://github.com/se-edu/addressbook-level3/commit/850b78879582f38accb05dd20c245963c65ea599#diff-d44c4f51c24f6253c277a2bb9bc440b8064d9c15ad7cb7ceda280bca032efce9).
+Then insert the following into [`main/resources/view/IngredientListCard.fxml`](https://github.com/se-edu/inventory-level3/commit/850b78879582f38accb05dd20c245963c65ea599#diff-d44c4f51c24f6253c277a2bb9bc440b8064d9c15ad7cb7ceda280bca032efce9).
 
-**`PersonListCard.fxml`:**
+**`IngredientListCard.fxml`:**
 
 ``` xml
 <Label fx:id="remark" styleClass="cell_small_label" text="\$remark" />
@@ -267,52 +267,52 @@ That’s it! Fire up the application again and you should see something like thi
 
 ![$remark shows up in each entry](../images/add-remark/$Remark.png)
 
-## Modify `Person` to support a `Remark` field
+## Modify `Ingredient` to support a `Remark` field
 
-Since `PersonCard` displays data from a `Person`, we need to update `Person` to get our `Remark` displayed!
+Since `IngredientCard` displays data from a `Ingredient`, we need to update `Ingredient` to get our `Remark` displayed!
 
-### Modify `Person`
+### Modify `Ingredient`
 
-We change the constructor of `Person` to take a `Remark`. We will also need to define new fields and accessors accordingly to store our new addition.
+We change the constructor of `Ingredient` to take a `Remark`. We will also need to define new fields and accessors accordingly to store our new addition.
 
-### Update other usages of `Person`
+### Update other usages of `Ingredient`
 
-Unfortunately, a change to `Person` will cause other commands to break, you will have to modify these commands to use the updated `Person`!
+Unfortunately, a change to `Ingredient` will cause other commands to break, you will have to modify these commands to use the updated `Ingredient`!
 
 <box type="tip" seamless>
 
-Use the `Find Usages` feature in IntelliJ IDEA on the `Person` class to find these commands.
+Use the `Find Usages` feature in IntelliJ IDEA on the `Ingredient` class to find these commands.
 
 </box>
 
-Refer to [this commit](https://github.com/se-edu/addressbook-level3/commit/ce998c37e65b92d35c91d28c7822cd139c2c0a5c) and check that you have got everything in order!
+Refer to [this commit](https://github.com/se-edu/inventory-level3/commit/ce998c37e65b92d35c91d28c7822cd139c2c0a5c) and check that you have got everything in order!
 
 
 ## Updating Storage
 
-AddressBook stores data by serializing `JsonAdaptedPerson` into `json` with the help of an external library — Jackson. Let’s update `JsonAdaptedPerson` to work with our new `Person`!
+AddressBook stores data by serializing `JsonAdaptedIngredient` into `json` with the help of an external library — Jackson. Let’s update `JsonAdaptedIngredient` to work with our new `Ingredient`!
 
 While the changes to code may be minimal, the test data will have to be updated as well.
 
 <box type="warning" seamless>
 
-You must delete AddressBook’s storage file located at `/data/addressbook.json` before running it! Not doing so will cause AddressBook to default to an empty address book!
+You must delete AddressBook’s storage file located at `/data/inventory.json` before running it! Not doing so will cause AddressBook to default to an empty address book!
 
 </box>
 
-Check out [this commit](https://github.com/se-edu/addressbook-level3/commit/556cbd0e03ff224d7a68afba171ad2eb0ce56bbf)
+Check out [this commit](https://github.com/se-edu/inventory-level3/commit/556cbd0e03ff224d7a68afba171ad2eb0ce56bbf)
 to see what the changes entail.
 
 ## Finalizing the UI
 
-Now that we have finalized the `Person` class and its dependencies, we can now bind the `Remark` field to the UI.
+Now that we have finalized the `Ingredient` class and its dependencies, we can now bind the `Remark` field to the UI.
 
-Just add [this one line of code!](https://github.com/se-edu/addressbook-level3/commit/5b98fee11b6b3f5749b6b943c4f3bd3aa049b692)
+Just add [this one line of code!](https://github.com/se-edu/inventory-level3/commit/5b98fee11b6b3f5749b6b943c4f3bd3aa049b692)
 
-**`PersonCard.java`:**
+**`IngredientCard.java`:**
 
 ```java
-public PersonCard(Person ingredient, int displayedIndex) {
+public IngredientCard(Ingredient ingredient, int displayedIndex) {
     //...
     remark.setText(ingredient.getRemark().value);
 }
@@ -326,31 +326,31 @@ After the previous step, we notice a peculiar regression — we went from di
 
 ### Update `RemarkCommand` and `RemarkCommandParser`
 
-In this last step, we modify `RemarkCommand#execute()` to change the `Remark` of a `Person`. Since all fields in a `Person` are immutable, we create a new instance of a `Person` with the values that we want and
-save it with `Model#setPerson()`.
+In this last step, we modify `RemarkCommand#execute()` to change the `Remark` of a `Ingredient`. Since all fields in a `Ingredient` are immutable, we create a new instance of a `Ingredient` with the values that we want and
+save it with `Model#setIngredient()`.
 
 **`RemarkCommand.java`:**
 
 ```java
 //...
-    public static final String MESSAGE_ADD_REMARK_SUCCESS = "Added remark to Person: %1$s";
-    public static final String MESSAGE_DELETE_REMARK_SUCCESS = "Removed remark from Person: %1$s";
+    public static final String MESSAGE_ADD_REMARK_SUCCESS = "Added remark to Ingredient: %1$s";
+    public static final String MESSAGE_DELETE_REMARK_SUCCESS = "Removed remark from Ingredient: %1$s";
 //...
     @Override
     public CommandResult execute(Model model) throws CommandException {
-        List<Person> lastShownList = model.getFilteredPersonList();
+        List<Ingredient> lastShownList = model.getFilteredIngredientList();
 
         if (index.getZeroBased() >= lastShownList.size()) {
             throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
         }
 
-        Person personToEdit = lastShownList.get(index.getZeroBased());
-        Person editedIngredient = new Person(
-                personToEdit.getName(), personToEdit.getPhone(), personToEdit.getEmail(),
-                personToEdit.getAddress(), remark, personToEdit.getTags());
+        Ingredient ingredientToEdit = lastShownList.get(index.getZeroBased());
+        Ingredient editedIngredient = new Ingredient(
+                ingredientToEdit.getName(), ingredientToEdit.getPhone(), ingredientToEdit.getEmail(),
+                ingredientToEdit.getAddress(), remark, ingredientToEdit.getTags());
 
-        model.setPerson(personToEdit, editedIngredient);
-        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+        model.setIngredient(ingredientToEdit, editedIngredient);
+        model.updateFilteredIngredientList(PREDICATE_SHOW_ALL_PERSONS);
 
         return new CommandResult(generateSuccessMessage(editedIngredient));
     }
@@ -358,11 +358,11 @@ save it with `Model#setPerson()`.
     /**
      * Generates a command execution success message based on whether
      * the remark is added to or removed from
-     * {@code personToEdit}.
+     * {@code ingredientToEdit}.
      */
-    private String generateSuccessMessage(Person personToEdit) {
+    private String generateSuccessMessage(Ingredient ingredientToEdit) {
         String message = !remark.value.isEmpty() ? MESSAGE_ADD_REMARK_SUCCESS : MESSAGE_DELETE_REMARK_SUCCESS;
-        return String.format(message, personToEdit);
+        return String.format(message, ingredientToEdit);
     }
 ```
 
@@ -374,7 +374,7 @@ Tests are crucial to ensuring that bugs don’t slip into the codebase unnoticed
 
 Let’s verify the correctness of our code by writing some tests!
 
-Of course you can simply add the test cases manually, like you've been doing all along this tutorial. The result would be like the test cases in [here](https://github.com/se-edu/addressbook-level3/commit/fac8f3fd855d55831ca0cc73313b5943d49d4d6e#diff-ff58f7c10338b34f76645df49b71ecb2bafaf7611b20e7ff59ebc98475538a01). Alternatively, you can get the help of IntelliJ to generate the skeletons of the test cases, as explained in the next section.
+Of course you can simply add the test cases manually, like you've been doing all along this tutorial. The result would be like the test cases in [here](https://github.com/se-edu/inventory-level3/commit/fac8f3fd855d55831ca0cc73313b5943d49d4d6e#diff-ff58f7c10338b34f76645df49b71ecb2bafaf7611b20e7ff59ebc98475538a01). Alternatively, you can get the help of IntelliJ to generate the skeletons of the test cases, as explained in the next section.
 
 ### Automatically generating tests
 
@@ -395,7 +395,7 @@ Following convention, let’s change the name of the generated method to `execut
 
 Let’s use the utility functions provided in `CommandTestUtil`. The functions ensure that commands produce the expected `CommandResult` and output the correct message. In this case, `CommandTestUtil#assertCommandSuccess` is the best fit as we are testing that a `RemarkCommand` will successfully add a `Remark`.
 
-You should end up with a test that looks something like [this](https://github.com/se-edu/addressbook-level3/commit/fac8f3fd855d55831ca0cc73313b5943d49d4d6e#diff-ff58f7c10338b34f76645df49b71ecb2bafaf7611b20e7ff59ebc98475538a01R36-R49).
+You should end up with a test that looks something like [this](https://github.com/se-edu/inventory-level3/commit/fac8f3fd855d55831ca0cc73313b5943d49d4d6e#diff-ff58f7c10338b34f76645df49b71ecb2bafaf7611b20e7ff59ebc98475538a01R36-R49).
 
 ## Conclusion
 

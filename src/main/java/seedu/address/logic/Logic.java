@@ -30,7 +30,7 @@ public interface Logic {
      */
     ReadOnlyInventory getInventory();
 
-    /** Returns an unmodifiable view of the filtered list of persons */
+    /** Returns an unmodifiable view of the filtered list of ingredients */
     ObservableList<Ingredient> getFilteredIngredientList();
 
     /**

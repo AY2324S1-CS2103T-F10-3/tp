@@ -12,15 +12,15 @@ import seedu.address.model.ingredient.exceptions.DuplicateIngredientException;
 import seedu.address.model.ingredient.exceptions.IngredientNotFoundException;
 
 /**
- * A list of persons that enforces uniqueness between its elements and does not allow nulls.
- * A person is considered unique by comparing using {@code Person#isSamePerson(Person)}. As such, adding and updating of
- * persons uses Person#isSamePerson(Person) for equality so as to ensure that the person being added or updated is
- * unique in terms of identity in the UniquePersonList. However, the removal of a person uses Person#equals(Object) so
- * as to ensure that the person with exactly the same fields will be removed.
+ * A list of ingredients that enforces uniqueness between its elements and does not allow nulls.
+ * A ingredient is considered unique by comparing using {@code Ingredient#isSameIngredient(Ingredient)}. As such, adding and updating of
+ * ingredients uses Ingredient#isSameIngredient(Ingredient) for equality so as to ensure that the ingredient being added or updated is
+ * unique in terms of identity in the UniqueIngredientList. However, the removal of a ingredient uses Ingredient#equals(Object) so
+ * as to ensure that the ingredient with exactly the same fields will be removed.
  *
  * Supports a minimal set of list operations.
  *
- * @see Ingredient#isSamePerson(Ingredient)
+ * @see Ingredient#isSameIngredient(Ingredient)
  */
 public class UniqueIngredientList implements Iterable<Ingredient> {
 
@@ -29,16 +29,16 @@ public class UniqueIngredientList implements Iterable<Ingredient> {
             FXCollections.unmodifiableObservableList(internalList);
 
     /**
-     * Returns true if the list contains an equivalent person as the given argument.
+     * Returns true if the list contains an equivalent ingredient as the given argument.
      */
     public boolean contains(Ingredient toCheck) {
         requireNonNull(toCheck);
-        return internalList.stream().anyMatch(toCheck::isSamePerson);
+        return internalList.stream().anyMatch(toCheck::isSameIngredient);
     }
 
     /**
-     * Adds a person to the list.
-     * The person must not already exist in the list.
+     * Adds a ingredient to the list.
+     * The ingredient must not already exist in the list.
      */
     public void add(Ingredient toAdd) {
         requireNonNull(toAdd);
@@ -49,9 +49,9 @@ public class UniqueIngredientList implements Iterable<Ingredient> {
     }
 
     /**
-     * Replaces the person {@code target} in the list with {@code editedPerson}.
+     * Replaces the ingredient {@code target} in the list with {@code editedIngredient}.
      * {@code target} must exist in the list.
-     * The person identity of {@code editedPerson} must not be the same as another existing person in the list.
+     * The ingredient identity of {@code editedIngredient} must not be the same as another existing ingredient in the list.
      */
     public void setIngredient(Ingredient target, Ingredient editedIngredient) {
         requireAllNonNull(target, editedIngredient);
@@ -61,7 +61,7 @@ public class UniqueIngredientList implements Iterable<Ingredient> {
             throw new IngredientNotFoundException();
         }
 
-        if (!target.isSamePerson(editedIngredient) && contains(editedIngredient)) {
+        if (!target.isSameIngredient(editedIngredient) && contains(editedIngredient)) {
             throw new DuplicateIngredientException();
         }
 
@@ -69,8 +69,8 @@ public class UniqueIngredientList implements Iterable<Ingredient> {
     }
 
     /**
-     * Removes the equivalent person from the list.
-     * The person must exist in the list.
+     * Removes the equivalent ingredient from the list.
+     * The ingredient must exist in the list.
      */
     public void remove(Ingredient toRemove) {
         requireNonNull(toRemove);
@@ -85,8 +85,8 @@ public class UniqueIngredientList implements Iterable<Ingredient> {
     }
 
     /**
-     * Replaces the contents of this list with {@code persons}.
-     * {@code persons} must not contain duplicate persons.
+     * Replaces the contents of this list with {@code ingredients}.
+     * {@code ingredients} must not contain duplicate ingredients.
      */
     public void setIngredients(List<Ingredient> ingredients) {
         requireAllNonNull(ingredients);
@@ -135,12 +135,12 @@ public class UniqueIngredientList implements Iterable<Ingredient> {
     }
 
     /**
-     * Returns true if {@code persons} contains only unique persons.
+     * Returns true if {@code ingredients} contains only unique ingredients.
      */
     private boolean ingredientsAreUnique(List<Ingredient> ingredients) {
         for (int i = 0; i < ingredients.size() - 1; i++) {
             for (int j = i + 1; j < ingredients.size(); j++) {
-                if (ingredients.get(i).isSamePerson(ingredients.get(j))) {
+                if (ingredients.get(i).isSameIngredient(ingredients.get(j))) {
                     return false;
                 }
             }
