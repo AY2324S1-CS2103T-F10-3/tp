@@ -72,6 +72,8 @@
       "headings": {
         "implementation": "Implementation",
         "view-recipe-feature": "View recipe feature",
+        "list-recipe-feature": "List recipe feature",
+        "design-considerations": "Design Considerations:",
         "appendix-requirements": "Appendix: Requirements",
         "product-scope": "Product Scope",
         "use-cases": "Use Cases",
