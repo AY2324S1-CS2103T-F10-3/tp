@@ -70,6 +70,8 @@
     {
       "src": "DeveloperGuide.md",
       "headings": {
+        "implementation": "Implementation",
+        "view-recipe-feature": "View recipe feature",
         "appendix-requirements": "Appendix: Requirements",
         "product-scope": "Product Scope",
         "use-cases": "Use Cases",
@@ -151,7 +153,7 @@
         "finding-the-quantity-of-an-ingredient-by-name-stock": "Finding the quantity of an ingredient by name: stock",
         "clearing-all-entries-clear": "Clearing all entries : clear",
         "exiting-the-program-exit": "Exiting the program : exit",
-        "viewing-specific-recipes-coming-in-v1-3": "Viewing Specific Recipes [coming in v1.3]",
+        "viewing-specific-recipes": "Viewing Specific Recipes",
         "listing-all-recipes-list": "Listing all Recipes : list",
         "adding-recipes-coming-in-v1-3": "Adding Recipes [coming in v1.3]",
         "modifying-recipes-coming-in-v1-3": "Modifying Recipes [coming in v1.3]",

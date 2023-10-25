@@ -1,0 +1,77 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":InventoryAppParser" as InventoryAppParser LOGIC_COLOR
+participant ":RecipeViewCommandParser" as RecipeViewCommandParser LOGIC_COLOR
+participant "d:RecipeViewCommand" as RecipeViewCommand LOGIC_COLOR
+participant ":CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant "p:RecipeUuidMatchesPredicate" as RecipeUuidMatchesPredicate MODEL_COLOR
+participant ":Model" as Model MODEL_COLOR
+end box
+
+[-> LogicManager : execute("view 1")
+activate LogicManager
+
+LogicManager -> InventoryAppParser : parseCommand("view 1")
+activate InventoryAppParser
+
+create RecipeViewCommandParser
+InventoryAppParser -> RecipeViewCommandParser
+activate RecipeViewCommandParser
+
+create RecipeUuidMatchesPredicate
+RecipeViewCommandParser -> RecipeUuidMatchesPredicate
+activate RecipeUuidMatchesPredicate
+RecipeUuidMatchesPredicate --> RecipeViewCommandParser : p
+deactivate RecipeUuidMatchesPredicate
+
+RecipeViewCommandParser --> InventoryAppParser
+deactivate RecipeViewCommandParser
+
+InventoryAppParser -> RecipeViewCommandParser : parse("1")
+activate RecipeViewCommandParser
+
+create RecipeViewCommand
+RecipeViewCommandParser -> RecipeViewCommand
+activate RecipeViewCommand
+
+RecipeViewCommand --> RecipeViewCommandParser : d
+deactivate RecipeViewCommand
+
+RecipeViewCommandParser --> InventoryAppParser : d
+deactivate RecipeViewCommandParser
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+RecipeViewCommandParser -[hidden]-> InventoryAppParser
+destroy RecipeViewCommandParser
+
+InventoryAppParser --> LogicManager : d
+deactivate InventoryAppParser
+
+LogicManager -> RecipeViewCommand : execute()
+activate RecipeViewCommand
+
+RecipeViewCommand -> Model : updateFilteredRecipeList(p)
+activate Model
+
+Model --> RecipeViewCommand
+deactivate Model
+
+create CommandResult
+RecipeViewCommand -> CommandResult
+activate CommandResult
+
+CommandResult --> RecipeViewCommand
+deactivate CommandResult
+
+RecipeViewCommand --> LogicManager : result
+deactivate RecipeViewCommand
+
+[<--LogicManager
+deactivate LogicManager
+@enduml
