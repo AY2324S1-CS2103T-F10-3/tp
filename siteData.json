@@ -70,7 +70,11 @@
     {
       "src": "DeveloperGuide.md",
       "headings": {
+        "architecture": "Architecture",
+        "model-component": "Model Component",
+        "storage-component": "Storage Component",
         "implementation": "Implementation",
+        "search-ingredient-feature": "Search ingredient feature",
         "add-recipe-feature": "Add recipe feature",
         "view-recipe-feature": "View recipe feature",
         "list-recipe-feature": "List recipe feature",
