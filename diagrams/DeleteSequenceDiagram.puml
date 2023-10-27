@@ -49,8 +49,13 @@ deactivate InventoryAppParser
 LogicManager -> DeleteCommand : execute()
 activate DeleteCommand
 
-DeleteCommand -> Model : deleteIngredient(1)
+DeleteCommand -> Model : getFilteredRecipeList()
 activate Model
+
+Model --> DeleteCommand : lastShownList
+
+DeleteCommand -> Model : deleteRecipe(deletedRecipe)
+
 
 Model --> DeleteCommand
 deactivate Model
