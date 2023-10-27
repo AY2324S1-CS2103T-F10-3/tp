@@ -71,6 +71,7 @@
       "src": "DeveloperGuide.md",
       "headings": {
         "implementation": "Implementation",
+        "add-recipe-feature": "Add recipe feature",
         "view-recipe-feature": "View recipe feature",
         "list-recipe-feature": "List recipe feature",
         "design-considerations": "Design Considerations:",
