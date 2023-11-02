@@ -70,7 +70,10 @@
     {
       "src": "DeveloperGuide.md",
       "headings": {
+        "acknowledgements": "Acknowledgements",
+        "setting-up-getting-started": "Setting up, getting started",
         "architecture": "Architecture",
+        "ui-component": "UI component",
         "model-component": "Model Component",
         "storage-component": "Storage Component",
         "implementation": "Implementation",
@@ -80,11 +83,16 @@
         "list-recipe-feature": "List recipe feature",
         "design-considerations": "Design Considerations:",
         "delete-recipe-feature": "Delete recipe feature",
+        "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
         "appendix-requirements": "Appendix: Requirements",
         "product-scope": "Product Scope",
         "use-cases": "Use Cases",
         "non-functional-requirements": "Non-Functional Requirements",
-        "glossary": "Glossary"
+        "glossary": "Glossary",
+        "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
+        "launch-and-shutdown": "Launch and shutdown",
+        "deleting-a-recipe": "Deleting a recipe",
+        "saving-data": "Saving data"
       },
       "headingKeywords": {}
     },

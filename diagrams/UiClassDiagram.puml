@@ -13,6 +13,9 @@ Class HelpWindow
 Class ResultDisplay
 Class IngredientListPanel
 Class IngredientCard
+Class RecipeListPanel
+Class RecipeListCard
+Class FullRecipePanel
 Class StatusBarFooter
 Class CommandBox
 }
@@ -33,10 +36,14 @@ UiManager -down-> "1" MainWindow
 MainWindow *-down->  "1" CommandBox
 MainWindow *-down-> "1" ResultDisplay
 MainWindow *-down-> "1" IngredientListPanel
+MainWindow *-down-> "1" RecipeListPanel
 MainWindow *-down-> "1" StatusBarFooter
 MainWindow --> "0..1" HelpWindow
 
 IngredientListPanel -down-> "*" IngredientCard
+
+RecipeListPanel -down-> "*" RecipeListCard
+RecipeListPanel -down-> "1" FullRecipePanel
 
 MainWindow -left-|> UiPart
 
@@ -44,6 +51,9 @@ ResultDisplay --|> UiPart
 CommandBox --|> UiPart
 IngredientListPanel --|> UiPart
 IngredientCard --|> UiPart
+RecipeListPanel --|> UiPart
+RecipeListCard --|> UiPart
+FullRecipePanel --|> UiPart
 StatusBarFooter --|> UiPart
 HelpWindow --|> UiPart
 
