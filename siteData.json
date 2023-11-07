@@ -161,6 +161,7 @@
       "title": "User Guide",
       "headings": {
         "ba-king-br-ead-user-guide": "[BA]king [BR]ead User Guide",
+        "table-of-contents": "Table of Contents",
         "quick-start": "Quick start",
         "features": "Features",
         "viewing-help-help": "Viewing help : help",
@@ -178,7 +179,7 @@
         "saving-the-data": "Saving the data",
         "editing-the-data-file": "Editing the data file",
         "faq": "FAQ",
-        "known-issues": "Known issues",
+        "known-issues-will-be-edited": "Known issues [will be edited]",
         "command-summary": "Command summary"
       },
       "headingKeywords": {}
