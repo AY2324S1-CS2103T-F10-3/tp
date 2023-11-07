@@ -43,7 +43,7 @@ MainWindow --> "0..1" HelpWindow
 IngredientListPanel -down-> "*" IngredientCard
 
 RecipeListPanel -down-> "*" RecipeListCard
-RecipeListPanel -down-> "1" FullRecipePanel
+RecipeListPanel -down-> "0..1" FullRecipePanel
 
 MainWindow -left-|> UiPart
 
