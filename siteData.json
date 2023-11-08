@@ -173,7 +173,7 @@
         "listing-all-recipes-list": "Listing all Recipes : list",
         "viewing-specific-recipes-view": "Viewing Specific Recipes : view",
         "adding-recipes-addrecipe": "Adding Recipes : addrecipe",
-        "modifying-recipes": "Modifying Recipes",
+        "modifying-recipes-modify": "Modifying Recipes : modify",
         "deleting-recipes-delete": "Deleting Recipes : delete",
         "searching-recipes-search": "Searching Recipes : search",
         "exiting-the-program-exit": "Exiting the program : exit",
