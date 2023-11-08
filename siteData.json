@@ -199,7 +199,10 @@
     },
     {
       "src": "team/itstytan.md",
-      "headings": {},
+      "title": "Tan Tze Young's Project Portfolio Page",
+      "headings": {
+        "project-ba-king-br-ead": "Project: [Ba]king [Br]ead"
+      },
       "headingKeywords": {}
     },
     {
