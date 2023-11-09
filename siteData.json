@@ -93,7 +93,8 @@
         "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
         "launch-and-shutdown": "Launch and shutdown",
         "deleting-a-recipe": "Deleting a recipe",
-        "saving-data": "Saving data"
+        "saving-data": "Saving data",
+        "appendix-planned-enhancements": "Appendix: Planned Enhancements"
       },
       "headingKeywords": {}
     },
@@ -216,7 +217,9 @@
     },
     {
       "src": "team/prawnzyy.md",
-      "headings": {},
+      "headings": {
+        "seah-zi-xiang-s-project-portfolio-page": "Seah Zi Xiang's Project Portfolio Page"
+      },
       "headingKeywords": {}
     },
     {
