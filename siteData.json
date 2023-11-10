@@ -233,7 +233,8 @@
       "src": "team/thaddeusong.md",
       "headings": {
         "overview": "Overview",
-        "summary-of-contributions": "Summary of Contributions",
+        "enhancements-implemented": "Enhancements implemented",
+        "contribution-to-team-based-tasks": "Contribution to team-based tasks**",
         "contributions-to-developer-guide": "Contributions to Developer Guide",
         "contributions-to-user-guide": "Contributions to User Guide"
       },
