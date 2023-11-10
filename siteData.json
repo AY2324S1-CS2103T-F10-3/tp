@@ -72,6 +72,7 @@
       "headings": {
         "acknowledgements": "Acknowledgements",
         "setting-up-getting-started": "Setting up, getting started",
+        "design": "Design",
         "architecture": "Architecture",
         "ui-component": "UI component",
         "model-component": "Model Component",
