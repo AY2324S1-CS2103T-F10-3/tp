@@ -242,7 +242,10 @@
     },
     {
       "src": "team/tohliyuan.md",
-      "headings": {},
+      "headings": {
+        "toh-li-yuan-s-project-portfolio-page": "Toh Li Yuan's Project Portfolio Page",
+        "project-ba-king-br-ead": "Project: [Ba]king [Br]ead"
+      },
       "headingKeywords": {}
     },
     {
