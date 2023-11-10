@@ -84,6 +84,7 @@
         "design-considerations": "Design Considerations:",
         "search-recipe-feature": "Search recipe feature",
         "delete-recipe-feature": "Delete recipe feature",
+        "modify-recipe-feature": "Modify recipe feature",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
         "appendix-requirements": "Appendix: Requirements",
         "product-scope": "Product Scope",
@@ -196,7 +197,10 @@
     },
     {
       "src": "team/dhruvir29.md",
-      "headings": {},
+      "headings": {
+        "dhruvi-ketan-rathod-s-project-portfolio-page": "Dhruvi Ketan Rathod's Project Portfolio Page",
+        "project-ba-king-br-ead": "Project: [Ba]king [Br]ead"
+      },
       "headingKeywords": {}
     },
     {
