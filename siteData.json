@@ -95,8 +95,17 @@
         "glossary": "Glossary",
         "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
         "launch-and-shutdown": "Launch and shutdown",
+        "adding-an-ingredient": "Adding an ingredient",
+        "using-an-ingredient": "Using an ingredient",
+        "viewing-of-ingredients": "Viewing of Ingredients",
+        "viewing-all-recipes": "Viewing all recipes",
+        "viewing-a-specific-recipe": "Viewing a specific recipe",
+        "adding-a-recipe": "Adding a recipe",
+        "modifying-a-recipe": "Modifying a recipe",
+        "searching-for-a-recipe-with-a-specific-ingredient": "Searching for a recipe with a specific ingredient",
         "deleting-a-recipe": "Deleting a recipe",
         "saving-data": "Saving data",
+        "appendix-effort": "Appendix: Effort",
         "appendix-planned-enhancements": "Appendix: Planned Enhancements"
       },
       "headingKeywords": {}
