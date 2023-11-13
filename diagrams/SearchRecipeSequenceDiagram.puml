@@ -71,8 +71,6 @@ deactivate CommandResult
 
 SearchCommand --> LogicManager : result
 deactivate SearchCommand
-SearchCommand -[hidden]-> LogicManager : result
-destroy SearchCommand
 
 [<--LogicManager
 deactivate LogicManager
