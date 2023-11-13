@@ -41,6 +41,7 @@ ModifyCommandParser --> InventoryAppParser : m
 deactivate ModifyCommandParser
 'Hidden arrow to position the destroy marker below the end of the activation bar.
 ModifyCommandParser -[hidden]-> InventoryAppParser
+destroy ModifyCommandParser
 
 InventoryAppParser --> LogicManager : m
 deactivate InventoryAppParser
