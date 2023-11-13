@@ -1,0 +1,90 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":InventoryAppParser" as InventoryAppParser LOGIC_COLOR
+participant ":ModifyCommandParser" as ModifyCommandParser LOGIC_COLOR
+participant "m:ModifyCommand" as ModifyCommand LOGIC_COLOR
+participant ":CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant ":Model" as Model MODEL_COLOR
+end box
+
+[-> LogicManager : execute("modify i/1 n/Flour q/100 u/g")
+activate LogicManager
+
+LogicManager -> InventoryAppParser : parseCommand("modify i/1 n/Flour q/100 u/g")
+activate InventoryAppParser
+
+create ModifyCommandParser
+InventoryAppParser -> ModifyCommandParser
+activate ModifyCommandParser
+
+ModifyCommandParser --> InventoryAppParser
+deactivate ModifyCommandParser
+
+InventoryAppParser -> ModifyCommandParser : parse("i/1 n/Flour q/100 u/g")
+activate ModifyCommandParser
+
+create ModifyCommand
+ModifyCommandParser -> ModifyCommand
+activate ModifyCommand
+
+ModifyCommand --> ModifyCommandParser : m
+deactivate ModifyCommand
+
+ModifyCommandParser --> InventoryAppParser : m
+deactivate ModifyCommandParser
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+ModifyCommandParser -[hidden]-> InventoryAppParser
+
+InventoryAppParser --> LogicManager : m
+deactivate InventoryAppParser
+
+LogicManager -> ModifyCommand : execute()
+activate ModifyCommand
+
+
+ModifyCommand -> Model : getRecipe(recipeUuid)
+activate Model
+
+Model --> ModifyCommand : oldRecipe
+deactivate Model
+
+
+ModifyCommand -> Model : deleteRecipe(oldRecipe)
+activate Model
+
+Model --> ModifyCommand
+deactivate Model
+
+ModifyCommand -> Model : addRecipe(newRecipe)
+activate Model
+
+Model --> ModifyCommand
+deactivate Model
+
+ModifyCommand -> Model : updateFilteredRecipeList(predicate)
+activate Model
+
+Model --> ModifyCommand
+deactivate Model
+
+
+create CommandResult
+ModifyCommand -> CommandResult
+activate CommandResult
+
+CommandResult --> ModifyCommand
+deactivate CommandResult
+
+ModifyCommand --> LogicManager : result
+deactivate ModifyCommand
+
+[<--LogicManager
+deactivate LogicManager
+@enduml
