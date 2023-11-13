@@ -71,6 +71,9 @@ deactivate CommandResult
 
 RecipeViewCommand --> LogicManager : result
 deactivate RecipeViewCommand
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+RecipeViewCommand -[hidden]-> LogicManager
+destroy RecipeViewCommand
 
 [<--LogicManager
 deactivate LogicManager
