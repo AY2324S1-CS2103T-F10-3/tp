@@ -215,10 +215,10 @@ with(this){return _c('p',[_v("Step 6. If there is a recipe with the same UUID in
 with(this){return _c('p',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("RecipeViewCommand")]),_v(" calls "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Model#updateFilteredRecipeList(Predicate<Recipe> predicate)")]),_v(", filtering the\nrecipe list in "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ModelManager")]),_v(" according to the predicate set.")])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('strong',[_v("Note")]),_v(": If the argument is an invalid UUID (less than or equals to 0), a\n"),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ParseException")]),_v(" will be thrown and users will be informed that the index provided is invalid.")])}
+with(this){return _c('p',[_c('strong',[_v("Note")]),_v(": If the argument is an invalid UUID (less than or equals to 0), a\n"),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ParseException")]),_v(" will be thrown and users will be informed that the UUID provided is invalid.")])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('strong',[_v("Note")]),_v(": If the recipe with that UUID does not exist in the app, a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("CommandException")]),_v(" will be thrown and users will be\ninformed that there is no recipe with that index in the recipe book.")])}
+with(this){return _c('p',[_c('strong',[_v("Note")]),_v(": If the recipe with that UUID does not exist in the app, a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("CommandException")]),_v(" will be thrown and users will be\ninformed that there is no recipe with that UUID in the recipe book.")])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Note")]),_v(": The lifeline for "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("RecipeViewCommandParser")]),_v(" and "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("RecipeViewCommand")]),_v(" should end at the destroy marker (X) but\ndue to a limitation of PlantUML, the lifeline reaches the end of diagram.")])}
@@ -323,10 +323,10 @@ with(this){return _c('p',[_v("Step 5: This "),_c('code',{pre:true,attrs:{"class"
 with(this){return _c('p',[_v("Step 6: During execution, the recipe whose UUID matches with the UniqueId passed into the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("DeleteCommand")]),_v(" is retrieved\nfrom the recipe list through the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Model#getRecipe(UniqueId uuid)")]),_v(" and the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Model#deleteRecipe(Recipe recipe)")]),_v(" will be\ncalled with this recipe, causing the recipe to be deleted from the recipe list.")])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('strong',[_v("Note")]),_v(": If the argument is an invalid UUID (less than or equals to 0), a\n"),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ParseException")]),_v(" will be thrown and users will be informed that the index provided is invalid.")])}
+with(this){return _c('p',[_c('strong',[_v("Note")]),_v(": If the argument is an invalid UUID (less than or equals to 0), a\n"),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ParseException")]),_v(" will be thrown and users will be informed that the UUID provided is invalid.")])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('strong',[_v("Note")]),_v(": If the recipe with that UUID does not exist in the app, a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("CommandException")]),_v(" will be thrown and users will be\ninformed that there is no recipe with that index in the recipe book.")])}
+with(this){return _c('p',[_c('strong',[_v("Note")]),_v(": If the recipe with that UUID does not exist in the app, a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("CommandException")]),_v(" will be thrown and users will be\ninformed that there is no recipe with that UUID in the recipe book.")])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("The following sequence diagram shows how the DeleteCommand works:\n"),_c('img',{attrs:{"src":"/tp/images/UML/deletesequencediagram.png","width":"700px"}})])}
@@ -380,10 +380,10 @@ with(this){return _c('p',[_v("Step 8: Then the "),_c('code',{pre:true,attrs:{"cl
 with(this){return _c('p',[_v("Step 9: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ModifyCommand")]),_v(" then calls "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Model#updateFilteredRecipeList(Predicate<Recipe> predicate)")]),_v(", filtering the\nrecipe list in "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ModelManager")]),_v(" with a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("RecipeUuidMatchesPredicate")]),_v(" that matches the UUID that was passed into\n"),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ModifyCommand")]),_v(".")])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('strong',[_v("Note")]),_v(": If an invalid uuid (less than or equals to 0) is inputted, a\n"),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ParseException")]),_v(" will be thrown and users will be informed that the index provided is invalid.")])}
+with(this){return _c('p',[_c('strong',[_v("Note")]),_v(": If an invalid uuid (less than or equals to 0) is inputted, a\n"),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ParseException")]),_v(" will be thrown and users will be informed that the UUID provided is invalid.")])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('strong',[_v("Note")]),_v(": If the recipe with that uuid does not exist in the app, a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("CommandException")]),_v(" will be thrown and users will be\ninformed that there is no recipe with that index in the recipe book.")])}
+with(this){return _c('p',[_c('strong',[_v("Note")]),_v(": If the recipe with that uuid does not exist in the app, a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("CommandException")]),_v(" will be thrown and users will be\ninformed that there is no recipe with that UUID in the recipe book.")])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Note")]),_v(": Due to limited space in the sequence diagram, certain behaviour could not be shown.")])}
@@ -662,6 +662,6 @@ with(this){return _c('h2',{attrs:{"id":"appendix-effort"}},[_c('strong',[_v("App
 with(this){return _c('ul',[_c('li',[_v("Significant effort went into refactoring the entire code base to change the AddressBook entities into ingredients and recipes.")]),_v(" "),_c('li',[_v("The recipe model and ingredient model were not trivial to design.\n"),_c('ul',[_c('li',[_v("Much consideration was given to the design of the system representing the different units of an ingredient and the conversion between them.")]),_v(" "),_c('li',[_v("The recipe model and how to build a recipe is also complex, since a recipe composes of many steps and ingredients.")]),_v(" "),_c('li',[_v("Compared to AB3, our application manages more entities and has entities of greater complexity.")])])]),_v(" "),_c('li',[_v("The above also meant the add recipe and modify recipe feature were not easy to implement, and were very bug prone which took\neffort to fix.")]),_v(" "),_c('li',[_v("The UI design took a significant effort, a mockup design was first done on figma to test the color combinations and layouts.\n"),_c('ul',[_c('li',[_v("Figuring out how to change the view from a recipe list to a full recipe view was not simple, how javafx updates its\nUI components is not explained or easily understood through the UI code.")]),_v(" "),_c('li',[_v("The UI is also made to be size responsive, the layout will retain its integrity even if the app is viewed in full-screen.")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Mon, 13 Nov 2023, 13:11:52 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Mon, 13 Nov 2023, 13:52:37 GMT+8]")])])])}
 }];
   
