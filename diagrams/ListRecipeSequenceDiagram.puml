@@ -48,6 +48,8 @@ deactivate CommandResult
 
 ListCommand --> LogicManager : result
 deactivate ListCommand
+ListCommand -[hidden]-> LogicManager : result
+destroy ListCommand
 
 [<--LogicManager
 deactivate LogicManager
